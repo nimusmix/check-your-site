@@ -1,0 +1,8 @@
+export const PALETTE = {
+  WHITE300: '#C1C1C1',
+  WHITE500: '#FCFCFC',
+  BLACK300: '#4B4366',
+  BLACK500: '#0F172A',
+  BRAND300: '#D6E4FB',
+  BRAND500: '#3B82F6',
+};
