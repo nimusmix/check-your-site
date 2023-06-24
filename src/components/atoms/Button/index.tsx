@@ -2,6 +2,7 @@ import * as S from "./index.styles";
 
 export interface IButtonProps extends S.IButton {
   children: React.ReactNode;
+  type?: "button" | "submit" | "reset" | undefined;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 

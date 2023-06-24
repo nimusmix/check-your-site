@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { PALETTE } from '../../../constants/palette';
 
 export interface IButton {
-  buttonType: 'fill' | 'empty';
+  designType: 'fill' | 'empty';
   color: string;
   variant?: TTextVariant;
   padding?: string;
@@ -23,9 +23,9 @@ export const Button = styled.button<IButton>`
   padding: ${({ padding }) => padding || '0.5rem 0.8rem'};
   margin: ${({ margin }) => margin};
   width: ${({ width }) => width || ''};
-  border-radius: ${({ borderRadius }) => borderRadius || '0.75rem'};
+  border-radius: ${({ borderRadius }) => borderRadius || '0.5rem'};
 
-  color: ${({ buttonType, color }) => buttonType === 'fill' ? PALETTE.WHITE500 : color};
-  background-color: ${({ buttonType, color }) => buttonType === 'fill' ? color : 'inherit'};
+  color: ${({ designType, color }) => designType === 'fill' ? PALETTE.WHITE500 : color};
+  background-color: ${({ designType, color }) => designType === 'fill' ? color : 'inherit'};
   border: ${({ color }) => `0.8px ${color} solid`};
 `
