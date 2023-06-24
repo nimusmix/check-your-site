@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Toast = styled.div`
   position: fixed;
   padding: 0.625rem 1rem;
   min-width: 5rem;

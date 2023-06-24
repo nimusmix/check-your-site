@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import toastState from '../../../recoil/toastState';
-import * as S from './index.styles';
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import toastState from "../../../recoil/toastState";
+import * as S from "./index.styles";
 
 const Toast = () => {
   const [toast, setToast] = useRecoilState(toastState);
@@ -9,12 +9,12 @@ const Toast = () => {
   useEffect(() => {
     if (toast.isVisible) {
       setTimeout(() => {
-        setToast({ msg: '', isVisible: false });
+        setToast({ msg: "", isVisible: false });
       }, 3000);
     }
   });
 
-  return <S.Wrapper>${toast.msg}</S.Wrapper>;
+  return <S.Toast>{toast.msg}</S.Toast>;
 };
 
 export default Toast;
