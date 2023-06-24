@@ -1,19 +1,19 @@
 export const FONT_SIZE = {
-  H1: '2.25rem',
-  H2: '2rem',
-  H3: '1.75rem',
-  H4: '1.5rem',
-  LG: '1.25rem',
-  BASE: '1rem',
-  SM: '0.875rem',
-  XS: '0.75rem',
+  h1: '2.25rem',
+  h2: '2rem',
+  h3: '1.75rem',
+  h4: '1.5rem',
+  lg: '1.25rem',
+  base: '1rem',
+  sm: '0.875rem',
+  xs: '0.75rem',
 };
 
 export const BORDER_RADIUS = {
-  XXL: '1.75rem',
-  XL: '1.5rem',
-  LG: '1.25rem',
-  BASE: '1rem',
-  SM: '0.75rem',
-  XS: '0.5rem',
+  xxl: '1.75rem',
+  xl: '1.5rem',
+  lg: '1.25rem',
+  base: '1rem',
+  sm: '0.75rem',
+  xs: '0.5rem',
 };
