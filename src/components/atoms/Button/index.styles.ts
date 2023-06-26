@@ -1,7 +1,7 @@
 import { FONT_SIZE } from './../../../constants/styles';
 import { TTextVariant } from './../Text/index.styles';
 import styled from "styled-components";
-import { PALETTE } from '../../../constants/palette';
+import PALETTE from '../../../constants/palette';
 
 export interface IButton {
   designType: 'fill' | 'empty';

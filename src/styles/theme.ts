@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import { PALETTE } from '../constants/palette';
+import PALETTE from '../constants/palette';
 
 export const lightTheme: DefaultTheme = {
   bgColor: PALETTE.WHITE500,
