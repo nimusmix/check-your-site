@@ -1,32 +1,39 @@
 import styled from 'styled-components';
 
 export const Toast = styled.div`
+  display: flex;
+  align-items: center;
   position: fixed;
   padding: 0.625rem 1rem;
   min-width: 5rem;
-  top: 4rem;
+  bottom: 4rem;
   left: 50%;
   translate: -50%;
   z-index: 1100;
   pointer-events: all;
 
   text-align: center;
-  color: ${({ theme }) => theme.textColor};
-  /* TODO :: 배경색 수정 */
-  background-color: red;
   border-radius: 0.5rem;
-  animation: slideDown 3000ms forwards, fadeOut 3000ms ease-out;
+  color: white;
+  background-color: #F85149;
+  animation: slideDown 2000ms forwards, fadeOut 2000ms ease-out;
+
+  p {
+    margin-left: 0.25rem;
+    color: inherit;
+  }
 
   @keyframes slideDown {
     0%,
     100% {
-      -webkit-transform: translateY(-100px);
+      -webkit-transform: translateY(100px);
     }
     10%,
     90% {
       -webkit-transform: translateY(0px);
     }
   }
+
   @keyframes fadeOut {
     88% {
       opacity: 1;

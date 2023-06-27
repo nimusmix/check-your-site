@@ -24,7 +24,20 @@ const GlobalStyle = createGlobalStyle`
  input {
   border: none;
   outline: none;
+  background-color: transparent;
+  
+  :-webkit-autofill {
+    -webkit-text-fill-color: ${({ theme: { textColor } }) => textColor};
+  }
+
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus,
+  :-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+  }
  }
+
 `;
 
 export default GlobalStyle;

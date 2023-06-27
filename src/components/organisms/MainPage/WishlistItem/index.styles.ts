@@ -9,7 +9,7 @@ export const NotHovered = styled(BasicWrapper)`
   }
 
   p {
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
   }
   
   svg {
