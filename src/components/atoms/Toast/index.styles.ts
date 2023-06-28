@@ -19,7 +19,7 @@ export const Toast = styled.div`
   animation: slideDown 2000ms forwards, fadeOut 2000ms ease-out;
 
   p {
-    margin-left: 0.25rem;
+    margin-left: 0.375rem;
     color: inherit;
   }
 

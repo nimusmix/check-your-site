@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components';
 import PALETTE from '../constants/palette';
 
 export const lightTheme: DefaultTheme = {
-  bgColor: PALETTE.WHITE500,
+  bgColor: PALETTE.BRAND300,
   textColor: PALETTE.BLACK500,
   borderColor: PALETTE.WHITE300,
 };
