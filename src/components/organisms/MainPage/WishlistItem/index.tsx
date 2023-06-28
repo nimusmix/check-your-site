@@ -17,7 +17,7 @@ interface IWishlistItemProps extends IWishlistItem {
 }
 
 const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
-  const [hovered, setHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [wishlist, setWishlist] = useRecoilState(wishlistState);
   const navi = useNavigate();
 
@@ -25,43 +25,46 @@ const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
 
   const onDeleteClick = () => {
     const newWishlist = [...wishlist];
-    newWishlist.splice(idx, 1);
+    newWishlist.splice(idx - 1, 1);
     setWishlist(newWishlist);
-    setHovered(false);
+    setIsHovered(false);
   };
 
   return (
     <S.WishlistItemWrapper
-      className={hovered ? "hovered" : ""}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <S.NotHovered className="not-hovered">
-        <Text variant="h4" color={PALETTE.BRAND500} weight={600}>
-          {idx + 1}
-        </Text>
-        <Text variant="h4" color={PALETTE.BLACK300} weight={600}>
-          {nickname}
-        </Text>
-        <Text variant="base" color={PALETTE.WHITE300}>
-          {url[1]}
-        </Text>
+      {isHovered ? (
+        <S.Hovered colors={hoverColors}>
+          <div
+            onClick={() =>
+              navi(`/detail/${idx}`, { state: { nickname, url: url.join("") } })
+            }
+          >
+            <IconEye />
+            <Text variant="base">이동</Text>
+          </div>
+          <div onClick={onDeleteClick}>
+            <IconTrash />
+            <Text variant="base">삭제</Text>
+          </div>
+        </S.Hovered>
+      ) : (
+        <S.NotHovered>
+          <Text variant="h4" color={PALETTE.BRAND500} weight={600}>
+            {idx}
+          </Text>
+          <Text variant="h4" color={PALETTE.BLACK300} weight={600}>
+            {nickname}
+          </Text>
+          <Text variant="base" color={PALETTE.WHITE300}>
+            {url[1]}
+          </Text>
 
-        <IconArrow onClick={onDeleteClick} color={PALETTE.BRAND500} />
-      </S.NotHovered>
-
-      <S.Hovered colors={hoverColors}>
-        <div
-          onClick={() => navi(`/detail/${idx}`, { state: { nickname, url } })}
-        >
-          <IconEye />
-          <Text variant="base">이동</Text>
-        </div>
-        <div onClick={onDeleteClick}>
-          <IconTrash />
-          <Text variant="base">삭제</Text>
-        </div>
-      </S.Hovered>
+          <IconArrow onClick={onDeleteClick} color={PALETTE.BRAND500} />
+        </S.NotHovered>
+      )}
     </S.WishlistItemWrapper>
   );
 };

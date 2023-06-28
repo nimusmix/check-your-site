@@ -19,12 +19,11 @@ export const NotHovered = styled(BasicWrapper)`
 `
 
 export const Hovered = styled(BasicWrapper)<{ colors: Array<string> }>`
-  display: none;
   justify-content: center;
 
   div {
     display: flex;
-    margin: 1.25rem;
+    padding: 1.25rem;
     cursor: pointer;
     color: ${({ colors }) => colors[0]};
     
@@ -50,8 +49,10 @@ export const WishlistItemWrapper = styled(BasicWrapper)`
   margin: 0 0.5rem;
   border-radius: 1.25rem;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
+  background-color: white;
+
   ${NotHovered}, ${Hovered} {
+    width: 100%;
     height: 100%;
 
     p {
@@ -60,16 +61,6 @@ export const WishlistItemWrapper = styled(BasicWrapper)`
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
-  }
-  }
-  
-  &.hovered {
-    ${NotHovered} {
-      display: none;
-    }
-
-    ${Hovered} {
-      display: flex;
     }
   }
 `

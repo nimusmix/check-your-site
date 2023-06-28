@@ -27,7 +27,7 @@ const MainPage = () => {
 
       <S.WishlistWrapper>
         {wishlist.map((item: IWishlistItem, idx) => (
-          <WishlistItem key={idx} {...item} idx={idx} />
+          <WishlistItem key={idx} {...item} idx={idx + 1} />
         ))}
         {Array.from({ length: 4 - wishlist.length }, (_, idx) => (
           <WishlistNoItem key={idx} />
