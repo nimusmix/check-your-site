@@ -2,13 +2,13 @@ import { FieldValues, useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
 import { BsPencil as IconPencil, BsSearch as IconSearch } from "react-icons/bs";
 import PALETTE from "../../../../constants/palette";
+import { MESSAGE_SEARCH_ERROR } from "../../../../constants/message";
 import useToast from "../../../../hooks/useToast";
 import wishlistState from "../../../../recoil/wishlistState";
 import urlParsing from "../../../../utils/urlParsing";
 import Button from "../../../atoms/Button";
 import { IWishlistItem } from "../WishlistItem";
 import * as S from "./index.styles";
-import { MESSAGE_SEARCH_ERROR } from "../../../../constants/message";
 
 const SearchBar = () => {
   const {
@@ -21,6 +21,7 @@ const SearchBar = () => {
   const [wishlist, setWishlist] = useRecoilState(wishlistState);
   const { showToast } = useToast();
 
+  // 유효성 검사 통과 시
   const onValid = ({ nickname, url }: FieldValues) => {
     if (wishlist?.length === 4) {
       showToast(MESSAGE_SEARCH_ERROR.WISHLIST_LENGTH);
@@ -37,6 +38,7 @@ const SearchBar = () => {
     reset();
   };
 
+  // 유효성 검사 미통과 시
   const onInvalid = (data: FieldValues) => {
     if (errors.nickname === undefined && errors.url === undefined) {
       showToast(MESSAGE_SEARCH_ERROR.NICKNAME_REQUIRED);

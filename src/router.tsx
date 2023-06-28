@@ -1,19 +1,19 @@
-import { createBrowserRouter, Outlet } from 'react-router-dom';
-import MainPage from './pages/MainPage';
-import DetailPage from './pages/DetailPage';
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import DetailPage from "./pages/DetailPage";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Outlet />,
     children: [
       {
         index: true,
-        path: '/',
+        path: "/",
         element: <MainPage />,
       },
       {
-        path: '/detail/:pageName',
+        path: "/detail/:siteIdx",
         element: <DetailPage />,
       },
     ],
