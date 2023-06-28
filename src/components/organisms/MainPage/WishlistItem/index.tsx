@@ -35,7 +35,7 @@ const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {isHovered ? (
+      {isHovered && (
         <S.Hovered colors={hoverColors}>
           <div
             onClick={() =>
@@ -50,7 +50,9 @@ const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
             <Text variant="base">삭제</Text>
           </div>
         </S.Hovered>
-      ) : (
+      )}
+
+      {isHovered || (
         <S.NotHovered>
           <Text variant="h4" color={PALETTE.BRAND500} weight={600}>
             {idx}
@@ -61,7 +63,6 @@ const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
           <Text variant="base" color={PALETTE.WHITE300}>
             {url[1]}
           </Text>
-
           <IconArrow onClick={onDeleteClick} color={PALETTE.BRAND500} />
         </S.NotHovered>
       )}

@@ -5,8 +5,23 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
 
   * {
-    transition: background-color 0.3s ease-in;
+    transition: background-color 0.15s ease-in;
   }
+
+  ::-webkit-scrollbar {
+    width: 0.375rem;
+    height: 0.375rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FF715D;
+    border-radius: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
   
   html {
   line-height: 1.5;

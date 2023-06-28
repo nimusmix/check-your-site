@@ -19,7 +19,7 @@ const MainPage = () => {
           CHECK YOUR SITE
         </Text>
         <Text variant="base" color={PALETTE.WHITE300}>
-          내가 관심 있는 사이트의 역사가 궁금하다면? 궁금한 블라블라
+          관심 있는 사이트의 역사가 궁금하다면?
         </Text>
       </S.TitleWrapper>
 
