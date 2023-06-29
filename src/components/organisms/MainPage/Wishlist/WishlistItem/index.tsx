@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { FaTrashAlt as IconTrash, FaEye as IconEye } from "react-icons/fa";
 import { HiOutlineArrowRight as IconArrow } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import PALETTE from "../../../../constants/palette";
-import wishlistState from "../../../../recoil/wishlistState";
-import Text from "../../../atoms/Text";
+import PALETTE from "../../../../../constants/palette";
+import wishlistState from "../../../../../recoil/wishlistState";
+import Text from "../../../../atoms/Text";
 import * as S from "./index.styles";
 export interface IWishlistItem {
   nickname: string;
@@ -17,6 +17,7 @@ interface IWishlistItemProps extends IWishlistItem {
 }
 
 const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
+  console.log(`🔔 wishlistitem ${nickname}`);
   const [isHovered, setIsHovered] = useState(false);
   const [wishlist, setWishlist] = useRecoilState(wishlistState);
   const navi = useNavigate();
@@ -70,4 +71,4 @@ const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
   );
 };
 
-export default WishlistItem;
+export default memo(WishlistItem);

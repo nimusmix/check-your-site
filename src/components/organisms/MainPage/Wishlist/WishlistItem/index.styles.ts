@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { BasicCard } from './../../../atoms/BasicCard/index.styles';
-import { BasicWrapper } from './../../../atoms/BasicWrapper/index.styles';
+import { BasicCard } from '../../../../atoms/BasicCard/index.styles';
+import { BasicWrapper } from '../../../../atoms/BasicWrapper/index.styles';
 
 export const NotHovered = styled(BasicWrapper)`
   align-items: flex-start;

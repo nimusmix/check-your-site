@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { IWishlistItem } from './../components/organisms/MainPage/WishlistItem/index';
+import { IWishlistItem } from '../components/organisms/MainPage/Wishlist/WishlistItem/index';
 
 const wishlistState = atom<Array<IWishlistItem>>({
   key: 'wishlistState',

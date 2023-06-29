@@ -14,8 +14,3 @@ export const TitleWrapper = styled(BasicWrapper)`
     font-style: italic;
   }
 `;
-
-export const WishlistWrapper = styled(BasicWrapper)`
-  flex-direction: row;
-  margin-top: 3.5rem;
-`

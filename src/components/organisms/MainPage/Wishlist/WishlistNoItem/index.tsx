@@ -1,5 +1,5 @@
-import PALETTE from "../../../../constants/palette";
-import Text from "../../../atoms/Text";
+import PALETTE from "../../../../../constants/palette";
+import Text from "../../../../atoms/Text";
 import * as S from "./index.styles";
 
 const WishlistNoItem = () => {
