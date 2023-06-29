@@ -43,6 +43,13 @@ export const getUrlFor10Years = async (url: string) => {
     };
     return urlItem;
   })
-  
-  return Promise.all(urlList);
+
+  const availableList = (await Promise.all(urlList)).filter((item) => item.available);
+  const listAvailable = await availableList.length > 0;
+  const urlData = {
+    listAvailable,
+    urlList: availableList
+  }
+
+  return urlData;
 }
