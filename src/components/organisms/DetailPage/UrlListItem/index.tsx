@@ -1,3 +1,4 @@
+import { IoEnterOutline as IconEnter } from "react-icons/io5";
 import PALETTE from "../../../../constants/palette";
 import Text from "../../../atoms/Text";
 import * as S from "./index.styles";
@@ -16,15 +17,19 @@ const UrlListItem = ({ year, date, available, availableUrl }: IUrlListItem) => {
 
   return (
     <S.Wrapper onClick={() => window.open(availableUrl)}>
-      <S.DateWrapper>
-        <Text variant="h3" color={PALETTE.BRAND500} weight={600}>
-          {year}
-        </Text>
-        <div className="line"></div>
-        <Text variant="base" color={PALETTE.WHITE300}>
-          {date}
-        </Text>
-      </S.DateWrapper>
+      <S.UpperSectionWrapper>
+        <S.DateWrapper>
+          <Text variant="h3" color={PALETTE.BRAND500} weight={600}>
+            {year}
+          </Text>
+          <div className="line"></div>
+          <Text variant="base" color={PALETTE.WHITE300}>
+            {date}
+          </Text>
+        </S.DateWrapper>
+
+        <IconEnter size={20} color={PALETTE.BRAND500} />
+      </S.UpperSectionWrapper>
 
       <Text variant="base" color={PALETTE.BLACK300}>
         {availableUrl}

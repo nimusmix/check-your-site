@@ -9,13 +9,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 0.375rem;
-    height: 0.375rem;
+    width: 0.25rem;
   }
 
   ::-webkit-scrollbar-thumb {
     background: #FF715D;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
   }
 
   ::-webkit-scrollbar-track {

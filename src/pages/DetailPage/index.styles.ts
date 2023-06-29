@@ -26,5 +26,5 @@ export const ContentWrapper = styled(BasicWrapper)`
   justify-content: center;
   width: 100%;
   height: 100%;
-  min-height: 25rem;
+  min-height: 10rem;
 `

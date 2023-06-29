@@ -7,7 +7,7 @@ import useToast from "../../../../hooks/useToast";
 import wishlistState from "../../../../recoil/wishlistState";
 import urlParsing from "../../../../utils/urlParsing";
 import Button from "../../../atoms/Button";
-import { IWishlistItem } from "../WishlistItem";
+import { IWishlistItem } from "../Wishlist/WishlistItem";
 import * as S from "./index.styles";
 
 const SearchBar = () => {
@@ -33,8 +33,7 @@ const SearchBar = () => {
       url: urlParsing(url),
     };
 
-    const newWishlist = [...wishlist, data];
-    setWishlist(newWishlist);
+    setWishlist([...wishlist, data]);
     reset();
   };
 

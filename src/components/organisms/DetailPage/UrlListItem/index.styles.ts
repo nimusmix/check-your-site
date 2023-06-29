@@ -17,6 +17,12 @@ export const Wrapper = styled(BasicCard)`
   }
 `
 
+export const UpperSectionWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
 export const DateWrapper = styled.div`
   display: flex;
   align-items: flex-end;
