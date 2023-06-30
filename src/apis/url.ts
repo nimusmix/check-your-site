@@ -1,6 +1,6 @@
 import axios from "axios";
-import dateToString from "../../utils/dateToString";
-import { IUrlListItem } from "../organisms/DetailPage/UrlListItem";
+import dateToString from "../utils/dateToString";
+import { IUrlListItem } from "../components/organisms/DetailPage/UrlListItem";
 
 const BASE_URL = 'http://archive.org/wayback/available';
 
