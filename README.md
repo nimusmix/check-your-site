@@ -12,7 +12,7 @@ https://check-your-site.netlify.app/
 
 ### 🖥️ 주요 기능
 
-![관심 사이트 목록](./README.assets/관심 사이트 목록.gif)
+![관심 사이트 목록](./README.assets/wishlist.gif)
 
 **관심 사이트 목록**
 
@@ -22,7 +22,7 @@ https://check-your-site.netlify.app/
 - 카드가 등록되지 않았을 때도 4개의 빈 카드를 보여주어
     사이트를 최대 4개까지 등록할 수 있다는 점을 직관적으로 판단할 수 있게 하였습니다.
 
-<br/>![관심 사이트 상세](./README.assets/관심 사이트 상세.gif)
+<br/>![관심 사이트 상세](./README.assets/wishlist-detail.gif)
 
 **관심 사이트 상세**
 
@@ -36,28 +36,28 @@ https://check-your-site.netlify.app/
 
 ### 🔖 추가 기능
 
-**사이트 별명 설정**  [코드](./README.assets/구현 코드.md#사이트-별명-설정)
+**사이트 별명 설정**  [코드](./README.assets/codes.md#사이트-별명-설정)
 
 - 별명을 사용하는 것이 URL을 사용하는 것보다 사용자가 한 눈에 어떤 사이트인지 알아보기 쉬울 것이라고 판단했습니다.
 - UI를 고려하여 최대 5자 까지의 별명을 설정할 수 있도록 했습니다.
 
 <br/>
 
-**URL 파싱**  [코드](./README.assets/구현 코드.md#URL-파싱)
+**URL 파싱**  [코드](./README.assets/codes.md#URL-파싱)
 
 - 관심 사이트 카드의 URL은 최대 2줄까지 노출됩니다.
 - 따라서 URL에서의 핵심적인 정보만 노출시키기 위해 URL의 프로토콜 이후부터 나타나도록 했습니다.
 
 <br/>
 
-**URL 중복 검사**  [코드](./README.assets/구현 코드.md#URL-중복-검사)
+**URL 중복 검사**  [코드](./README.assets/codes.md#URL-중복-검사)
 
 - 데이터가 10년 중 일부만 존재할 경우 가장 가까운 시점이 중복되어 같은 홈페이지가 계속 노출되는 문제가 있었습니다.
 - api가 반환하는 timestamp를 이용해 이미 저장된 날짜의 홈페이지라면 다시 저장되지 않도록 했습니다.
 
 <br/>
 
-**URL 목록 캐싱** [코드](./README.assets/구현 코드.md#URL-목록-캐싱)
+**URL 목록 캐싱** [코드](./README.assets/codes.md#URL-목록-캐싱)
 
 - 하나의 URL은 해가 넘어가기 전까지 동일한 데이터를 받아옵니다.
 - 따라서 계속해서 api 요청을 보내지 않도록 URL을 쿼리 키로 하여 데이터를 캐싱했습니다.
