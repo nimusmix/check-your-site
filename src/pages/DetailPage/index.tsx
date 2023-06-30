@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useQuery } from "react-query";
 import PALETTE from "../../constants/palette";
 import minuteToMs from "../../utils/minuteToMs";
-import { getUrlFor10Years } from "../../components/apis/url";
+import { getUrlFor10Years } from "../../apis/url";
 import Text from "../../components/atoms/Text";
 import Spinner from "../../components/atoms/Spinner";
 import UrlListItem from "../../components/organisms/DetailPage/UrlListItem";
@@ -14,9 +14,10 @@ const DetailPage = () => {
   } = useLocation();
 
   const { isLoading, data: urlData } = useQuery(
-    [nickname, url],
+    [url],
     () => getUrlFor10Years(url),
     {
+      refetchOnWindowFocus: false,
       staleTime: minuteToMs(60),
       cacheTime: Infinity,
     }
