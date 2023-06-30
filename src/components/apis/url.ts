@@ -4,6 +4,11 @@ import { IUrlListItem } from "../organisms/DetailPage/UrlListItem";
 
 const BASE_URL = 'http://archive.org/wayback/available';
 
+export const getUrlByTimestamp = async (url: string, timestamp: string) => {
+  const res = await axios.get(BASE_URL, { params: { url, timestamp } });
+  return res.data.archived_snapshots;
+};
+
 export const getUrlFor10Years = async (url: string) => {
   const today = new Date();
   const thisYear = today.getFullYear();
@@ -15,13 +20,12 @@ export const getUrlFor10Years = async (url: string) => {
     let availableUrl = '';
     let date = new Date(`${year}-01-01`);
 
-    const res = await axios.get(BASE_URL, { params: { url, timestamp: `${year}0101` } });
-    const data = res.data.archived_snapshots;
+    const data = await getUrlByTimestamp(url, `${year}0101`);
 
     // 데이터가 있으면
     if (Object.keys(data).length !== 0) {
       const timestamp = data.closest.timestamp;
-      // 이미 수신한 날짜가 아니면
+      // 데이터 중복 검사
       if (!timestampList.includes(timestamp)) {
         available = data.closest.available;
         availableUrl = data.closest.url;
@@ -45,7 +49,7 @@ export const getUrlFor10Years = async (url: string) => {
   })
 
   const availableList = (await Promise.all(urlList)).filter((item) => item.available);
-  const listAvailable = await availableList.length > 0;
+  const listAvailable = availableList.length > 0;
   const urlData = {
     listAvailable,
     urlList: availableList
