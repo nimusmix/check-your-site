@@ -17,7 +17,6 @@ interface IWishlistItemProps extends IWishlistItem {
 }
 
 const WishlistItem = ({ idx, nickname, url }: IWishlistItemProps) => {
-  console.log(`🔔 wishlistitem ${nickname}`);
   const [isHovered, setIsHovered] = useState(false);
   const [wishlist, setWishlist] = useRecoilState(wishlistState);
   const navi = useNavigate();
