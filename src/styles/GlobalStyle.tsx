@@ -40,7 +40,10 @@ const GlobalStyle = createGlobalStyle`
   border: none;
   outline: none;
   background-color: transparent;
-  font-family: transparent;
+
+  ::placeholder {
+    font-family: transparent;
+  }
   
   :-webkit-autofill {
     -webkit-text-fill-color: ${({ theme: { textColor } }) => textColor};
